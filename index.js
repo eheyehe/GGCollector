@@ -81,7 +81,7 @@ const DELAYS = {
     // Clicar no campo de Login e digitar o usuário
     console.log('Clicando no campo de Login...');
     await page.mouse.click(POSITIONS.LOGIN_FIELD.x, POSITIONS.LOGIN_FIELD.y);
-    await page.keyboard.type(process.env.EVOWARS_USER || 'SEU_USUARIO');
+    await page.keyboard.type(process.env.ACCESS_USERNAME);
 
     // Delay de segurança
     console.log(`Aguardando ${DELAYS.TOBE_SAFE / 1000} segundos para evitar treta...`);
@@ -90,7 +90,7 @@ const DELAYS = {
     // Clicar no campo de Password e digitar a senha
     console.log('Clicando no campo de Password...');
     await page.mouse.click(POSITIONS.PASSWORD_FIELD.x, POSITIONS.PASSWORD_FIELD.y);
-    await page.keyboard.type(process.env.EVOWARS_PASSWORD || 'SUA_SENHA');
+    await page.keyboard.type(process.env.ACCESS_PASSWORD);
 
     // Delay de segurança
     console.log(`Aguardando ${DELAYS.TOBE_SAFE / 1000} segundos para evitar treta...`);
