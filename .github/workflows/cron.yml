@@ -27,7 +27,6 @@ jobs:
           ACCESS_USERNAME: ${{ secrets.ACCESS_USERNAME }}
           ACCESS_PASSWORD: ${{ secrets.ACCESS_PASSWORD }}
           ACCESS_URL: ${{ secrets.ACCESS_URL }}
-          NODE_OPTIONS: '--disable-warning=DEP0040'
         run: node index.js
 
       - name: Upload Screenshot Final
