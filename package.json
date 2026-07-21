@@ -1,7 +1,7 @@
 {
-  "name": "evowars-collector",
-  "version": "1.0.0",
-  "description": "Bot de automação otimizado para EvoWars.io",
+  "name": "gems-gold-collector",
+  "version": "3.7.0",
+  "description": "Automação de coleta de Gem e Gold",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
