@@ -1,0 +1,24 @@
+# Dependências do Node.js
+node_modules/
+
+# Logs do ambiente e gerenciadores de pacote
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Arquivos de variáveis de ambiente locais
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Imagens/Prints temporários
+screenshots/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
