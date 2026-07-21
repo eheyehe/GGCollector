@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const { PuppeteerBlocker } = require('@cliqz/adblocker-puppeteer');
+const { PuppeteerBlocker } = require('@ghostery/adblocker-puppeteer');
 const fetch = require('node-fetch');
 
 const POSITIONS = {
