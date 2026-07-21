@@ -20,7 +20,7 @@ jobs:
           node-version: 22
 
       - name: Instalar dependências
-        run: npm install puppeteer
+        run: npm install puppeteer @cliqz/adblocker-puppeteer node-fetch@2
 
       - name: Executar Script
         env:
