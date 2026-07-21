@@ -31,3 +31,11 @@ jobs:
           EVOWARS_USER: ${{ secrets.EVOWARS_USER }}
           EVOWARS_PASSWORD: ${{ secrets.EVOWARS_PASSWORD }}
         run: xvfb-run --server-args="-screen 0 1920x1080x24" node index.js
+
+      - name: Salvar Screenshot em caso de erro
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-erro
+          path: erro.png
+          if-no-files-found: ignore
