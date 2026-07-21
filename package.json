@@ -1,0 +1,12 @@
+{
+  "name": "evowars-collector",
+  "version": "1.0.0",
+  "description": "Bot de automação otimizado para EvoWars.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.1.0"
+  }
+}
