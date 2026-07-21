@@ -48,12 +48,15 @@ const DELAYS = {
 
     await page.setViewport({ width: 1920, height: 1080 });
 
-    console.log('Acessando Evowars.io...');
-    await page.goto('https://evowars.io/', { 
+    // Define a URL pegando da variável de ambiente (com um fallback caso rode localmente)
+    const ADDR_URL = process.env.ACCESS_URL;
+
+    console.log('Acessando o endereço...');
+    await page.goto(ADDR_URL, { 
       waitUntil: 'networkidle2', 
       timeout: DELAYS.PAGE_LOAD_TIMEOUT 
     });
-
+    
     console.log(`Aguardando carregamento inicial por ${DELAYS.AFTER_PAGE_LOAD / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_PAGE_LOAD));
 
@@ -82,7 +85,6 @@ const DELAYS = {
 
     // Delay de segurança
     console.log(`Aguardando ${DELAYS.TOBE_SAFE / 1000} segundos para evitar treta...`);
-//    await new Promise((resolve) => setTimeout(resolve, 3000));
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
     
     // Clicar no campo de Password e digitar a senha
@@ -127,14 +129,14 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
     // Clicar em Claim Gold
-    console.log('21. Clicando em Claim Gold...');
+    console.log('Clicando em Claim Gold...');
     await page.mouse.click(POSITIONS.CLAIM_GOLD.x, POSITIONS.CLAIM_GOLD.y);
 
     // Delay de segurança
     console.log(`Aguardando ${DELAYS.TOBE_SAFE / 1000} segundos para evitar treta...`)
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
-    // 23. Capturar screenshot final de validação
+    // Capturar screenshot final de validação - Descomente para testes/troubleshooting
     console.log('Salvando screenshot final...');
     await page.screenshot({ path: 'resultado.png' });
 
