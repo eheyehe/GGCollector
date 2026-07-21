@@ -136,8 +136,8 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
     // Capturar screenshot final de validação - Descomente para testes/troubleshooting
-    console.log('Salvando screenshot final...');
-    await page.screenshot({ path: 'resultado.png' });
+    // console.log('Salvando screenshot final...');
+    // await page.screenshot({ path: 'resultado.png' });
 
     console.log('Execução concluída.');
   } catch (error) {
