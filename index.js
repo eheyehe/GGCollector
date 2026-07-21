@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const { PuppeteerBlocker } = require('@cliqz/adblocker-puppeteer');
+const fetch = require('node-fetch');
 
 const POSITIONS = {
   PLAY_INTRO: { x: 960, y: 920 },
@@ -38,6 +40,11 @@ const DELAYS = {
     });
 
     const page = await browser.newPage();
+
+    // Ativa o bloqueador de anúncios na aba atual
+    const blocker = await PuppeteerBlocker.fromPrebuiltFull(fetch);
+    await blocker.enableBlockingInPage(page);
+
     await page.setViewport({ width: 1920, height: 1080 });
 
     console.log('1. Acessando Evowars.io...');
