@@ -1,4 +1,4 @@
-name: EvoWars Bot Execution
+name: Make it rain
 
 on:
   workflow_dispatch:
@@ -24,8 +24,9 @@ jobs:
 
       - name: Executar Script
         env:
-          EVOWARS_USER: ${{ secrets.EVOWARS_USER }}
-          EVOWARS_PASSWORD: ${{ secrets.EVOWARS_PASSWORD }}
+          ACCESS_USERNAME: ${{ secrets.ACCESS_USERNAME }}
+          ACCESS_PASSWORD: ${{ secrets.ACCESS_PASSWORD }}
+          ACCESS_URL: ${{ secrets.ACCESS_URL }}
           NODE_OPTIONS: '--disable-warning=DEP0040'
         run: node index.js
 
