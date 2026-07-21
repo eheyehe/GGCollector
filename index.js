@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
 const { PuppeteerBlocker } = require('@ghostery/adblocker-puppeteer');
-const fetch = require('node-fetch');
 
 const POSITIONS = {
   PLAY_INTRO: { x: 960, y: 920 },
