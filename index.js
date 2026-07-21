@@ -125,6 +125,10 @@ const DELAYS = {
     console.log('22. Aguardando 3 segundos...');
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
+    // 23. Capturar screenshot final de validação
+    console.log('23. Salvando screenshot final...');
+    await page.screenshot({ path: 'resultado.png' });
+
     console.log('Execução concluída.');
   } catch (error) {
     console.error('Erro na execução:', error.message);
