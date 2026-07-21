@@ -48,7 +48,7 @@ const DELAYS = {
 
     await page.setViewport({ width: 1920, height: 1080 });
 
-    // Define a URL pegando da variável de ambiente (com um fallback caso rode localmente)
+    // Define a URL pegando da secret
     const ADDR_URL = process.env.ACCESS_URL;
 
     console.log('Acessando o endereço...');
