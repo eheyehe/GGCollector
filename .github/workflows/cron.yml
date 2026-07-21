@@ -21,6 +21,8 @@ jobs:
         run: npm install puppeteer
 
       - name: Executar Script
+        env:
+          NODE_OPTIONS: '--disable-warning=DEP0040'
         run: node index.js
 
       - name: Upload do Screenshot de Erro
