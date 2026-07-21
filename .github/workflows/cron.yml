@@ -8,26 +8,37 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
+steps:
+  - name: Checkout do código
+    uses: actions/checkout@v4
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+  - name: Configurar Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 22
 
-      - name: Instalar dependências
-        run: npm install puppeteer
+  - name: Instalar dependências
+    run: npm install puppeteer
 
-      - name: Executar Script
-        env:
-          NODE_OPTIONS: '--disable-warning=DEP0040'
-        run: node index.js
+  - name: Executar Script
+    env:
+      EVOWARS_USER: ${{ secrets.EVOWARS_USER }}
+      EVOWARS_PASSWORD: ${{ secrets.EVOWARS_PASSWORD }}
+      NODE_OPTIONS: '--disable-warning=DEP0040'
+    run: node index.js
 
-      - name: Upload do Screenshot de Erro
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot-erro
-          path: erro.png
+  - name: Upload Screenshot Final
+    if: always()
+    uses: actions/upload-artifact@v4
+    with:
+      name: screenshot-resultado
+      path: resultado.png
+      if-no-files-found: ignore
+
+  - name: Upload Screenshot de Erro
+    if: failure()
+    uses: actions/upload-artifact@v4
+    with:
+      name: screenshot-erro
+      path: erro.png
+      if-no-files-found: ignore
