@@ -1,0 +1,33 @@
+name: Executar Bot EvoWars
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 0 * * *' # Desativado temporariamente para testes
+
+jobs:
+  executar-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5 # Trava de segurança: interrompe o job em 5 minutos se congelar
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependências do sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdbus-1-3 libdrm2 libgbm1 libgtk-3-0 libasound2t64 libxshmfence1 libxss1 xvfb
+
+      - name: Instalar dependências Node
+        run: npm install
+
+      - name: Executar Bot
+        env:
+          EVOWARS_USER: ${{ secrets.EVOWARS_USER }}
+          EVOWARS_PASSWORD: ${{ secrets.EVOWARS_PASSWORD }}
+        run: xvfb-run --server-args="-screen 0 1920x1080x24" node index.js
