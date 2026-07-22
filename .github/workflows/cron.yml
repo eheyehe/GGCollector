@@ -3,7 +3,7 @@ name: Make it rain
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/59 * * * *'
+    - cron: '*/7 * * * *'
 
 jobs:
   run-bot:
