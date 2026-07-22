@@ -31,14 +31,15 @@ jobs:
           ACCESS_PASSWORD: ${{ secrets.ACCESS_PASSWORD }}
           ACCESS_URL: ${{ secrets.ACCESS_URL }}
         run: node index.js
-
-      - name: Upload Screenshot Final
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot-resultado
-          path: resultado.png
-          if-no-files-found: ignore
+      
+      # Descomente para testes ou troubleshooting
+      #- name: Upload Screenshot Final
+      #  if: always()
+      #  uses: actions/upload-artifact@v4
+      #  with:
+      #    name: screenshot-resultado
+      #    path: resultado.png
+      #    if-no-files-found: ignore
 
       - name: Upload Screenshot de Erro
         if: failure()
