@@ -21,7 +21,9 @@ jobs:
           cache: 'npm'
 
       - name: Instalar dependências
-        run: npm install puppeteer @ghostery/adblocker-puppeteer
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true
+        run: npm ci
 
       - name: Executar Script
         env:
