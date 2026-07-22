@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "puppeteer": "^24.1.0"
+    "puppeteer": "^24.1.0",
+    "@ghostery/adblocker-puppeteer": "^2.10.0"
   }
 }

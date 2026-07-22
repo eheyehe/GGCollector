@@ -28,6 +28,7 @@ const DELAYS = {
   let browser;
   try {
     browser = await puppeteer.launch({
+      executablePath: '/usr/bin/google-chrome',
       headless: true,
       args: [
         '--no-sandbox',
@@ -40,6 +41,7 @@ const DELAYS = {
     });
 
     const page = await browser.newPage();
+
 
     // Ativa o bloqueador de anúncios na aba atual
     const blocker = await PuppeteerBlocker.fromPrebuiltFull(fetch);

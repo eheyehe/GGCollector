@@ -22,7 +22,7 @@ jobs:
 
       - name: Instalar dependências
         env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
         run: npm ci
 
       - name: Executar Script
