@@ -130,7 +130,8 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
     // Clicar em Claim Gold
-    console.log('Clicando em Claim Gold...');
+    // console.log('Clicando em Claim Gold...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Claim Gold...`);
     await page.mouse.click(POSITIONS.CLAIM_GOLD.x, POSITIONS.CLAIM_GOLD.y);
 
     // Delay de segurança
