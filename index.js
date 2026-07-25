@@ -52,7 +52,7 @@ const DELAYS = {
     // Define a URL pegando da secret
     const ADDR_URL = process.env.ACCESS_URL;
 
-    console.log(ˋ[${new Date().toLocaleTimeString()}] Acessando o endereço...ˋ);
+    console.log(`[${new Date().toLocaleTimeString()}] Acessando o endereço...`);
     await page.goto(ADDR_URL, { 
       waitUntil: 'networkidle2', 
       timeout: DELAYS.PAGE_LOAD_TIMEOUT 
