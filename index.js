@@ -61,26 +61,26 @@ const DELAYS = {
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando carregamento inicial por ${DELAYS.AFTER_PAGE_LOAD / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_PAGE_LOAD));
 
-    console.log('[${new Date().toLocaleTimeString()}] Clicando em Play (Introdução)...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Play (Introdução)...`);
     await page.mouse.click(POSITIONS.PLAY_INTRO.x, POSITIONS.PLAY_INTRO.y);
 
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando transição por ${DELAYS.AFTER_PLAY / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_PLAY));
 
-    console.log('[${new Date().toLocaleTimeString()}] Clicando em Profile...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Profile...`);
     await page.mouse.click(POSITIONS.PROFILE.x, POSITIONS.PROFILE.y);
 
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando menu de perfil por ${DELAYS.AFTER_PROFILE / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_PROFILE));
 
-    console.log('[${new Date().toLocaleTimeString()}] Clicando em Account...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Account...`);
     await page.mouse.click(POSITIONS.ACCOUNT.x, POSITIONS.ACCOUNT.y);
 
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando carregamento da conta por ${DELAYS.AFTER_ACCOUNT / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_ACCOUNT));
 
     // Clicar no campo de Login e digitar o usuário
-    console.log('[${new Date().toLocaleTimeString()}] Clicando no campo de Login...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando no campo de Login...`);
     await page.mouse.click(POSITIONS.LOGIN_FIELD.x, POSITIONS.LOGIN_FIELD.y);
     await page.keyboard.type(process.env.ACCESS_USERNAME);
 
@@ -89,7 +89,7 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
     
     // Clicar no campo de Password e digitar a senha
-    console.log('[${new Date().toLocaleTimeString()}] Clicando no campo de Password...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando no campo de Password...`);
     await page.mouse.click(POSITIONS.PASSWORD_FIELD.x, POSITIONS.PASSWORD_FIELD.y);
     await page.keyboard.type(process.env.ACCESS_PASSWORD);
 
@@ -98,7 +98,7 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
     // Clicar no botão Login
-    console.log('[${new Date().toLocaleTimeString()}] Clicando no botão Login...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando no botão Login...`);
     await page.mouse.click(POSITIONS.LOGIN_BTN.x, POSITIONS.LOGIN_BTN.y);
 
     // Delay para carregar a página
@@ -106,7 +106,7 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.AFTER_LOGIN))
     
     // Clicar em Shop
-    console.log('[${new Date().toLocaleTimeString()}] Clicando em Shop...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Shop...`);
     await page.mouse.click(POSITIONS.SHOP.x, POSITIONS.SHOP.y);
 
     // Delay de segurança
@@ -114,7 +114,7 @@ const DELAYS = {
     await new Promise(r => setTimeout(r, DELAYS.TOBE_SAFE));
 
     // Clicar em Resources
-    console.log('[${new Date().toLocaleTimeString()}] Clicando em Resources...');
+    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Resources...`);
     await page.mouse.click(POSITIONS.RESOURCES.x, POSITIONS.RESOURCES.y);
 
     // Delay de segurança
@@ -141,7 +141,7 @@ const DELAYS = {
     // console.log('[${new Date().toLocaleTimeString()}] Salvando screenshot final...');
     // await page.screenshot({ path: 'resultado.png' });
 
-    console.log('[${new Date().toLocaleTimeString()}] Execução concluída.');
+    console.log(`[${new Date().toLocaleTimeString()}] Execução concluída.`);
   } catch (error) {
     console.error('[${new Date().toLocaleTimeString()}] Erro na execução:', error.message);
     if (browser) {
