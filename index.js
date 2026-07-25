@@ -52,7 +52,7 @@ const DELAYS = {
     // Define a URL pegando da secret
     const ADDR_URL = process.env.ACCESS_URL;
 
-    console.log('Acessando o endereço...');
+    console.log(ˋ[${new Date().toLocaleTimeString()}] Acessando o endereço...ˋ);
     await page.goto(ADDR_URL, { 
       waitUntil: 'networkidle2', 
       timeout: DELAYS.PAGE_LOAD_TIMEOUT 
@@ -61,7 +61,7 @@ const DELAYS = {
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando carregamento inicial por ${DELAYS.AFTER_PAGE_LOAD / 1000} segundos...`);
     await new Promise(r => setTimeout(r, DELAYS.AFTER_PAGE_LOAD));
 
-    console.log(`[${new Date().toLocaleTimeString()}] Clicando em Play (Introdução)...`);
+    console.log(`[${new Date().toLocaleTimeString()}] Clique no play da introdução`);
     await page.mouse.click(POSITIONS.PLAY_INTRO.x, POSITIONS.PLAY_INTRO.y);
 
     console.log(`[${new Date().toLocaleTimeString()}] Aguardando transição por ${DELAYS.AFTER_PLAY / 1000} segundos...`);
